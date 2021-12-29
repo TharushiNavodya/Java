@@ -1,4 +1,4 @@
-class Student
+class Student1
 {
 	private String ID;
 	private String Name;
@@ -6,7 +6,7 @@ class Student
 	private int marks2;
 	private int marks3;
 	
-	public Student(String ID,String Name)
+	public Student1(String ID,String Name)
 	{
 		this.ID = ID;
 		this.Name = Name;
@@ -38,7 +38,7 @@ class Student
 public class Main01{
 	public static void main(String [] args)
 	{
-		Student s1 = new Student("IT001","Ann");
+		Student1 s1 = new Student1("IT001","Ann");
 		s1.setMarks(78, 65, 89);
 		s1.Display();
 	}
