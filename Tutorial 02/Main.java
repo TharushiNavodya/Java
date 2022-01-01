@@ -45,3 +45,20 @@ public class Book implements IDisplay,IInput{
 	}
 
 }
+public class Main {
+
+	public static void main(String[] args) {
+		Book B = new Book();
+		try 
+		{
+			B.input();
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		B.printDetails();
+		
+	}
+
+}
