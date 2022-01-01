@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main
+{
+public static void main(String args[])
+{
+int maxSubjects;
+int [] marks = new int[5];
+int total = 0;
+double avg;
+
+Scanner input = new Scanner(System.in);
+
+try
+{
+System.out.print("Enter max subject :");
+maxSubjects = input.nextInt();
+for(int i = 0; i < 5; i++)
+{
+System.out.print("Enter marks "+(i+1)+" :");
+marks[i] = input.nextInt();
+total += marks[i];
+}
+System.out.println("Avarage Mark :"+total/5.0);
+
+
+}
+
+catch(Exception E)
+{
+E.printStackTrace();
+}
+finally {
+ System.out.println("This code will be gurrentied to run");
+ }
+ 
+ System.out.println("The end");
+
+}
+
+}
