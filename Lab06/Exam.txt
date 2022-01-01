@@ -1,0 +1,111 @@
+public interface IPrint
+{
+void printLine();
+void PrintDetails();
+}
+
+abstract class Item implements  IPrint
+{
+protected String itemNo;
+protected String name;
+protected double UnitPrice;
+protected int qut;
+
+public Item(String itemNo,String name,double UnitPrice,int qut)
+{
+this.itemNo = itemNo;
+this.name = name;
+this.UnitPrice = UnitPrice;
+this.qut = qut;
+}
+
+public void printLine()
+{
+System.out.println("Item No :"+this.itemNo+"Name    :"+this.name+"Unit Price :"+this.UnitPrice+"Quntity :"+this.qut);
+}
+
+public void PrintDetails()
+{
+System.out.println("Item No :"+this.itemNo);
+System.out.println("Name    :"+this.name);
+System.out.println("Unit Price :"+this.UnitPrice);
+System.out.println("Quntity :"+this.qut);
+}
+
+class Tablet extends Item
+{
+private String Brand;
+private String Model;
+private String Camara;
+
+public Tablet(String itemNo,String name,double UnitPrice,int qut,String Brand,String Model,String Camara)
+{
+super(itemNo,name,UnitPrice,qut);
+this.Brand = Brand;
+this.Model = Model;
+this.Camara = Camara;
+}
+
+public void printLine()
+{
+System.out.println("Item No :"+this.itemNo+"Name    :"+this.name+"Unit Price :"+this.UnitPrice+"Quntity :"+this.qut+"Brand  :"+this.Brand+"Model :"+this.Model+"Camara :"+this.Camara);
+}
+
+public void PrintDetails()
+{
+System.out.println("Item No :"+this.itemNo);
+System.out.println("Name    :"+this.name);
+System.out.println("Unit Price :"+this.UnitPrice);
+System.out.println("Quntity :"+this.qut);
+System.out.println("Brand  :"+this.Brand);
+System.out.println("Model :"+this.Model);
+System.out.println("Camara :"+this.Camara);
+}
+
+
+class Vegetables extends Item
+{
+private boolean organic;
+private int calories;
+
+public Vegetables (String itemNo,String name,double UnitPrice,int qut,boolean organic,int calories)
+{
+super(itemNo,name,UnitPrice,qut);
+this.organic = organic;
+this.calories = calories;
+
+public void printLine()
+{
+System.out.println("Item No :"+this.itemNo+"Name    :"+this.name+"Unit Price :"+this.UnitPrice+"Quntity :"+this.qut+"Organic :"+this.organic+"Calories  :"+this.calories);
+}
+
+public void PrintDetails()
+{
+System.out.println("Item No :"+this.itemNo);
+System.out.println("Name    :"+this.name);
+System.out.println("Unit Price :"+this.UnitPrice);
+System.out.println("Quntity :"+this.qut);
+System.out.println("Organic :"+this.organic);
+System.out.println("Calories  :"+this.calories);
+}
+}
+
+public MainApp
+{
+
+public static void main(String args[])
+{
+IPrint array = array[4] IPrint;
+
+IPrint array[0] = new Tablet (1,"HPTablet",225000,2,"HP","ISS0025","48MP");
+IPrint array[1] = new Tablet (2,"DellTablet",155000,3,"Dell","IP3035","64MP");
+IPrint array[2] = Vegetables (1,"Chili",45.00,250,true,1);
+IPrint array[3] = Vegetables (2,"Chili",35.00,100,false,1);
+
+for(int i = 0; i < 4; i++ )
+{
+array[i].printLine();
+}
+}
+
+}
