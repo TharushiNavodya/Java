@@ -1,0 +1,79 @@
+abstract class Vehicle
+{
+	protected double speed;
+	protected double regularPrice;
+	protected String colour;
+	
+	public Vehicle(double speed,double regularPrice,String colour)
+	{
+		this.speed = speed;
+		this.regularPrice = regularPrice;
+		this.colour = colour;
+	}
+	
+	public Vehicle(double speed,String colour)
+	{
+		this.speed = speed;
+		this.colour = colour;
+	}
+	public double getRegularPrice()
+	{
+		return this.regularPrice;
+	}
+	abstract double getSalePrice();
+	
+}
+
+class Truck extends Vehicle
+{
+	private double weight;
+	
+	public Truck(double speed,double regularPrice,String colour,double weight)
+	{
+		super(speed,regularPrice,colour);
+		this.weight = weight;
+	}
+	
+	public double getSalePrice()
+	{
+		if(this.weight>2000)
+		{
+			return regularPrice + regularPrice*0.1;
+		}
+		else
+		{
+			return regularPrice + regularPrice*0.2;
+		}
+	}
+}
+
+class Bus extends Vehicle
+{
+	private int year;
+	private double manufacturerDiscount;
+	
+	public Bus(double speed,double regularPrice,String colour,int year,double manufacturerDiscount)
+	{
+	super(speed,regularPrice,colour);
+	this.year = year;
+	this.manufacturerDiscount = manufacturerDiscount;
+	}
+	
+	public double getSalePrice()
+	{
+		return regularPrice + regularPrice*(this.manufacturerDiscount/100);
+	}
+}
+
+public class Ques04 {
+
+	public static void main(String[] args) 
+	{
+		Truck T = new Truck(180,350000,"Blue",120);
+		Bus B = new Bus(100,200000,"Red",2019,5);
+		
+		System.out.println("Bus sale price :"+B.getSalePrice());
+		System.out.println("Truck sale price :"+T.getSalePrice());
+	}
+
+}
